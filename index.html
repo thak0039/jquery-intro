@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery learning</title>
+    <!-- <script src="/jquery/jquery.js"></script> -->
+</head>
+<style>
+    #container {
+        background-color: sienna;
+        width: 30%;
+        margin: auto;
+        padding: 20px;
+        color: white;
+    }
+    
+    #container2 {
+        background-color: rgb(151, 44, 80);
+        width: 30%;
+        margin: auto;
+        padding: 20px;
+        color: white;
+    }
+</style>
+
+<body>
+    <div id="container">
+        <h1>box1 Data</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam sit, temporibus accusantium totam ipsa corporis harum at dolores quaerat placeat quam consequuntur optio quibusdam aliquam nihil eos libero molestiae eum?</p>
+
+    </div>
+    <div id="container2">
+        <h1>box 2 Data</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam sit, temporibus accusantium totam ipsa corporis harum at dolores quaerat placeat quam consequuntur optio quibusdam aliquam nihil eos libero molestiae eum?</p>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            let a = $("#container2").html();
+            $("#container").html(a);
+
+
+        });
+
+        alert($("#container2").html());
+    </script>
+
+
+</body>
+
+</html>
