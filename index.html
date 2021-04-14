@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jquery learning</title>
     <!-- <script src="/jquery/jquery.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <style>
     #container {
@@ -42,6 +43,11 @@
         background-color: teal;
         height: 180;
         width: 180px;
+    }
+    
+    button[type="submit"] {
+        margin-top: 1rem;
+        padding: 1rem;
     }
     
     .mybtn {
@@ -81,10 +87,29 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, beatae.</p>
 
         </div>
+        <h1>The Jquery Forms</h1>
+        <form id="regform">
+            <input type="text" id="name">
+            <input type="email" name="email" id="email">
+            <select name="color" id="mycolor">
+                <option>Red</option>
+                <option>Green</option>
+                <option>Blue</option>
+            </select>
+            <div id="value"></div>
+            <button type="submit">Submit</button>
+        </form>
+
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
     <script>
         $(document).ready(function() {
+            // let a = $("#container2").html();
+            // $("#container").html(a);
+            // $("h1,p").css("border", "10px solid red");
+
+
+            //   MOUSE EVENTS PRACTICE
 
             $("#container").click(function() {
                 $("#container").css("background-color", "red");
@@ -116,13 +141,39 @@
                 $(".demo2").css("border", "none");
             })
 
-            // let a = $("#container2").html();
-            // $("#container").html(a);
-            // $("h1,p").css("border", "10px solid red");
+            //  KEYUP AND DOWN PRACTICE
+
+            $('body').keyup(function() {
+                $(this).css("background-color", "white");
+            });
+
+            $('body').keydown(function() {
+                $(this).css("background-color", "grey");
+            });
+
+            // JQUERY FORM 
+
+            $('input').focus(function() {
+                $(this).css("background-color", "red");
+            });
+            $('input').blur(function() {
+                $(this).css("background-color", "white");
+            });
+            $('input').select(function() {
+                $(this).css("background-color", "green");
+            });
+            $('#mycolor').change(function() {
+                $("#value").html($(this).val());
+                $(this).css("background-color", "green");
+            });
+            $('#regform').submit(function() {
+                alert("Your Data have been Submited");
+            });
+
+
+
 
         });
-
-        // alert($("#container2").html());
     </script>
 
 
