@@ -24,6 +24,31 @@
         padding: 20px;
         color: white;
     }
+    
+    .demo1 {
+        margin-top: 2rem;
+    }
+    
+    .demo2 {
+        margin-top: 2rem;
+        margin-left: 1rem;
+        padding: 2rem;
+        background-color: teal;
+        height: 180;
+        width: 180px;
+    }
+    
+    .mybtn {
+        margin-left: 1rem;
+        padding: 1rem;
+        background-color: blue;
+        color: wheat;
+    }
+    
+    .mytext {
+        font-size: 20px;
+        display: none;
+    }
 </style>
 
 <body>
@@ -32,21 +57,63 @@
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam sit, temporibus accusantium totam ipsa corporis harum at dolores quaerat placeat quam consequuntur optio quibusdam aliquam nihil eos libero molestiae eum?</p>
 
     </div>
-    <div id="container2">
+    <!-- <div id="container2">
         <h1>box 2 Data</h1>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam sit, temporibus accusantium totam ipsa corporis harum at dolores quaerat placeat quam consequuntur optio quibusdam aliquam nihil eos libero molestiae eum?</p>
+
+    </div> -->
+
+    <div class="demo1">
+
+        <button class="mybtn" type="button">Click Me</button>
+        <p class="mytext">Welcome to the jquery tutorial
+        </p>
+    </div>
+    <div class="demo2">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, beatae.</p>
 
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
-            let a = $("#container2").html();
-            $("#container").html(a);
 
+            $("#container").click(function() {
+                $("#container").css("background-color", "red");
+
+            })
+            $("#container").dblclick(function() {
+                $("#container").css("background-color", "blue");
+            })
+            $("#container").contextmenu(function() {
+                $("#container").css("background-color", "tomato");
+            })
+
+            $("#container").mouseenter(function() {
+                $("#container").css("background-color", "green");
+            })
+            $("#container").mouseleave(function() {
+                $("#container").css("background-color", "black");
+            })
+            $(".mybtn").click(function() {
+                $(".mytext").css("display", "block");
+            })
+            $(".mybtn").dblclick(function() {
+                $(".mytext").css("display", "none");
+            })
+            $(".demo2").mouseenter(function() {
+                $(".demo2").css("border", "10px solid yellow");
+            })
+            $(".demo2").mouseleave(function() {
+                $(".demo2").css("border", "none");
+            })
+
+            // let a = $("#container2").html();
+            // $("#container").html(a);
+            // $("h1,p").css("border", "10px solid red");
 
         });
 
-        alert($("#container2").html());
+        // alert($("#container2").html());
     </script>
 
 
